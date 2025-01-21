@@ -1,0 +1,29 @@
+{
+	"name": "schedule_trigger_ecdc",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Data ingestion from ecdc to raw",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"sinkFileName": "testing.csv",
+					"relativeURL": "covid19/testing.csv"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 20,
+				"startTime": "2025-01-19T18:25:00",
+				"endTime": "2025-01-21T18:25:00",
+				"timeZone": "Central Standard Time"
+			}
+		}
+	}
+}
